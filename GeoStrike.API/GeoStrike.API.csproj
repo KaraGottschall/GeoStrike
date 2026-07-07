@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj" />
+      <ProjectReference Include="..\GeoStrike.Comunication\GeoStrike.Comunication.csproj" />
+      <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj" />
+      <ProjectReference Include="..\GeoStrike.Exception\GeoStrike.Exception.csproj" />
+      <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

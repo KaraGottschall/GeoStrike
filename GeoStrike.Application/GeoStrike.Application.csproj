@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GeoStrike.Comunication\GeoStrike.Comunication.csproj" />
+      <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj" />
+      <ProjectReference Include="..\GeoStrike.Exception\GeoStrike.Exception.csproj" />
+      <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
