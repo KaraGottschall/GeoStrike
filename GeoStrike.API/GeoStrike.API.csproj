@@ -11,21 +11,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="appsettings.Development.json">
-        <DependentUpon>appsettings.json</DependentUpon>
-      </Content>
+        <Content Update="appsettings.Development.json">
+            <DependentUpon>appsettings.json</DependentUpon>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj" />
-      <ProjectReference Include="..\GeoStrike.Comunication\GeoStrike.Comunication.csproj" />
-      <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj" />
-      <ProjectReference Include="..\GeoStrike.Exception\GeoStrike.Exception.csproj" />
-      <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj" />
+        <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Comunication\GeoStrike.Comunication.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Exception\GeoStrike.Exception.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj"/>
     </ItemGroup>
 
 </Project>

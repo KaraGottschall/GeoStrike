@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
+    </ItemGroup>
+
 </Project>
