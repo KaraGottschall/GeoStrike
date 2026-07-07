@@ -2,12 +2,24 @@
 
 using System.Globalization;
 using GeoStrike.Application;
+using GeoStrike.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 
 #endregion
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<GeoStrikeDbContext>(options =>
+    options.UseSqlServer(
+        connectionString,
+        sqlOptions => sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorNumbersToAdd: null
+        )
+    ));
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
