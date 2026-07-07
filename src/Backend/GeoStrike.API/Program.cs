@@ -48,6 +48,10 @@ WebApplication app = builder.Build();
 
 if (app.Environment.IsDevelopment()) app.MapOpenApi();
 
+using IServiceScope scope = app.Services.CreateScope();
+GeoStrikeDbContext dbContext = scope.ServiceProvider.GetRequiredService<GeoStrikeDbContext>();
+dbContext.Database.Migrate();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
