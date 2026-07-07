@@ -1,13 +1,14 @@
 <Solution>
-  <Folder Name="/Backend/">
-    <Project Path="GeoStrike.API/GeoStrike.API.csproj" />
-    <Project Path="GeoStrike.Application/GeoStrike.Application.csproj" />
-    <Project Path="GeoStrike.Domain/GeoStrike.Domain.csproj" />
-    <Project Path="GeoStrike.Infrastructure/GeoStrike.Infrastructure.csproj" />
-  </Folder>
-  <Folder Name="/Shared/">
-    <Project Path="GeoStrike.Comunication/GeoStrike.Comunication.csproj" />
-    <Project Path="GeoStrike.Exception/GeoStrike.Exception.csproj" />
-  </Folder>
-  <Folder Name="/Tests/" />
+    <Folder Name="/Backend/">
+        <Project Path="src/Backend/GeoStrike.API/GeoStrike.API.csproj"/>
+        <Project Path="src/Backend/GeoStrike.Application/GeoStrike.Application.csproj"/>
+        <Project Path="src/Backend/GeoStrike.Domain/GeoStrike.Domain.csproj"/>
+        <Project Path="src/Backend/GeoStrike.Infrastructure/GeoStrike.Infrastructure.csproj"/>
+    </Folder>
+    <Folder Name="/Frontend/"/>
+    <Folder Name="/Shared/">
+        <Project Path="src/Shared/GeoStrike.Comunication/GeoStrike.Comunication.csproj"/>
+        <Project Path="src/Shared/GeoStrike.Exception/GeoStrike.Exception.csproj"/>
+    </Folder>
+    <Folder Name="/Tests/"/>
 </Solution>
