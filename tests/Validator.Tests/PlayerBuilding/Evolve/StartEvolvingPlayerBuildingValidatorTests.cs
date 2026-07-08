@@ -3,7 +3,7 @@
 using CommonTestUtilities.Requests;
 using FluentValidation.Results;
 using GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
-using GeoStrike.Comunication.Requests;
+using GeoStrike.Communication.Requests;
 using Shouldly;
 
 #endregion

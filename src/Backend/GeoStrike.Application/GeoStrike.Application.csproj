@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\GeoStrike.Comunication\GeoStrike.Comunication.csproj"/>
+        <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj"/>
         <ProjectReference Include="..\..\Shared\GeoStrike.Exception\GeoStrike.Exception.csproj"/>
 
         <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>

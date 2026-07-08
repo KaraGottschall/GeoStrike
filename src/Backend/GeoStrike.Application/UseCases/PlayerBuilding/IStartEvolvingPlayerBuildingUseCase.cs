@@ -1,10 +1,4 @@
-﻿#region
-
-using GeoStrike.Comunication.Requests;
-
-#endregion
-
-namespace GeoStrike.Application.UseCases.PlayerBuilding;
+﻿namespace GeoStrike.Application.UseCases.PlayerBuilding;
 
 public interface IStartEvolvingPlayerBuildingUseCase
 {

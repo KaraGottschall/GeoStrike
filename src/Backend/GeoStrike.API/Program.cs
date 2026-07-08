@@ -1,15 +1,3 @@
-#region
-
-using System.Globalization;
-using GeoStrike.API.Filters;
-using GeoStrike.Application;
-using GeoStrike.Infrastructure;
-using GeoStrike.Infrastructure.DataAccess;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.EntityFrameworkCore;
-
-#endregion
-
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

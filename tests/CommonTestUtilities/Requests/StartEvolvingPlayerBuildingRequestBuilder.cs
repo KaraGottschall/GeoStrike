@@ -1,6 +1,6 @@
 ﻿#region
 
-using GeoStrike.Comunication.Requests;
+using GeoStrike.Communication.Requests;
 
 #endregion
 

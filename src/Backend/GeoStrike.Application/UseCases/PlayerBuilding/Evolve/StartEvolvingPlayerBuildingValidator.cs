@@ -1,12 +1,4 @@
-﻿#region
-
-using FluentValidation;
-using GeoStrike.Comunication.Requests;
-using static GeoStrike.Exception.Resources.ResourceMessagesExceptions;
-
-#endregion
-
-namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
+﻿namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
 
 public class StartEvolvingPlayerBuildingValidator : AbstractValidator<StartEvolvingPlayerBuildingRequest>
 {

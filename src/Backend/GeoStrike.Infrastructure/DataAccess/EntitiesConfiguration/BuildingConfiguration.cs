@@ -1,13 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Entities;
-using GeoStrike.Domain.Enums;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-#endregion
-
-namespace GeoStrike.Infrastructure.DataAccess.EntitiesConfiguration;
+﻿namespace GeoStrike.Infrastructure.DataAccess.EntitiesConfiguration;
 
 public class BuildingConfiguration : IEntityTypeConfiguration<Building>
 {

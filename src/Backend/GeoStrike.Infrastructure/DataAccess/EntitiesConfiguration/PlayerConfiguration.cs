@@ -1,12 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-#endregion
-
-namespace GeoStrike.Infrastructure.DataAccess.EntitiesConfiguration;
+﻿namespace GeoStrike.Infrastructure.DataAccess.EntitiesConfiguration;
 
 public class PlayerConfiguration : IEntityTypeConfiguration<Player>
 {

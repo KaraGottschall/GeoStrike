@@ -1,10 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Enums;
-
-#endregion
-
-namespace GeoStrike.Application.Configuration;
+﻿namespace GeoStrike.Application.Configuration;
 
 public class BuildingRules
 {

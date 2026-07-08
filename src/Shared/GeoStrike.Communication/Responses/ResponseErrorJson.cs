@@ -1,4 +1,4 @@
-namespace GeoStrike.Comunication.Responses;
+namespace GeoStrike.Communication.Responses;
 
 public class ResponseErrorJson
 {

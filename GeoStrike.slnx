@@ -9,7 +9,7 @@
         <Project Path="src/Frontend/GeoStrike.Blazor/GeoStrike.Blazor.csproj" />
     </Folder>
     <Folder Name="/Shared/">
-        <Project Path="src/Shared/GeoStrike.Comunication/GeoStrike.Comunication.csproj" />
+        <Project Path="src/Shared/GeoStrike.Communication/GeoStrike.Communication.csproj" />
         <Project Path="src/Shared/GeoStrike.Exception/GeoStrike.Exception.csproj" />
     </Folder>
     <Folder Name="/Tests/">
