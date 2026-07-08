@@ -2,6 +2,6 @@
 
 public class StartEvolvingPlayerBuildingRequest
 {
-    public Guid BuildingId { get; init; }
-    public Guid PlayerId { get; init; }
+    public Guid BuildingId { get; set; }
+    public Guid PlayerId { get; set; }
 }

@@ -12,5 +12,8 @@
         <Project Path="src/Shared/GeoStrike.Comunication/GeoStrike.Comunication.csproj" />
         <Project Path="src/Shared/GeoStrike.Exception/GeoStrike.Exception.csproj" />
     </Folder>
-    <Folder Name="/Tests/" />
+    <Folder Name="/Tests/">
+        <Project Path="tests/CommonTestUtilities/CommonTestUtilities.csproj" />
+        <Project Path="tests/Validator.Tests/Validator.Tests.csproj" />
+    </Folder>
 </Solution>
