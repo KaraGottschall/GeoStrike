@@ -1,4 +1,4 @@
-﻿namespace GeoStrike.Comunication.Requests;
+﻿namespace GeoStrike.Communication.Requests;
 
 public class StartEvolvingPlayerBuildingRequest
 {

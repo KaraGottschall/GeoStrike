@@ -1,11 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Repositories.PlayerBuilding;
-using Microsoft.EntityFrameworkCore;
-
-#endregion
-
-namespace GeoStrike.Infrastructure.DataAccess.Repositories.PlayerBuilding;
+﻿namespace GeoStrike.Infrastructure.DataAccess.Repositories.PlayerBuilding;
 
 public class PlayerBuildingRepository(GeoStrikeDbContext dbContext) : IWriteOnlyPlayerBuildingRepository
 {

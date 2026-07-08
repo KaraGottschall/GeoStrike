@@ -1,14 +1,3 @@
-#region
-
-using GeoStrike.Comunication.Responses;
-using GeoStrike.Exception.ExceptionBase;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using static GeoStrike.Exception.Resources.ResourceMessagesExceptions;
-using static Microsoft.AspNetCore.Http.StatusCodes;
-
-#endregion
-
 namespace GeoStrike.API.Filters;
 
 public class ExceptionFilter : IExceptionFilter

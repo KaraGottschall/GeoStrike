@@ -1,17 +1,4 @@
-﻿#region
-
-using FluentValidation.Results;
-using GeoStrike.Application.Configuration;
-using GeoStrike.Comunication.Requests;
-using GeoStrike.Domain.Repositories.Player;
-using GeoStrike.Domain.Repositories.PlayerBuilding;
-using GeoStrike.Exception.ExceptionBase;
-using PlayerBuildingEntity = GeoStrike.Domain.Entities.PlayerBuilding;
-using PlayerEntity = GeoStrike.Domain.Entities.Player;
-
-#endregion
-
-namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
+﻿namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
 
 public class StartEvolvingPlayerBuildingUseCase(
     IReadOnlyPlayerRepository readOnlyPlayerRepository,

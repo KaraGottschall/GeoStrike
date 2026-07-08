@@ -1,12 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Enums;
-using GeoStrike.Domain.Repositories.Building;
-using Microsoft.EntityFrameworkCore;
-
-#endregion
-
-namespace GeoStrike.Infrastructure.DataAccess.Repositories.Building;
+﻿namespace GeoStrike.Infrastructure.DataAccess.Repositories.Building;
 
 public class BuildingRepository(GeoStrikeDbContext dbContext) : IReadOnlyBuildingRepository
 {

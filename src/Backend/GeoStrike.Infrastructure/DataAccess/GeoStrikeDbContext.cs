@@ -1,11 +1,4 @@
-﻿#region
-
-using GeoStrike.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-
-#endregion
-
-namespace GeoStrike.Infrastructure.DataAccess;
+﻿namespace GeoStrike.Infrastructure.DataAccess;
 
 public class GeoStrikeDbContext(DbContextOptions dbContextOptions) : DbContext(dbContextOptions)
 {

@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Shared\GeoStrike.Comunication\GeoStrike.Comunication.csproj"/>
+        <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj"/>
     </ItemGroup>
 
 </Project>

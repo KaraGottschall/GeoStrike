@@ -1,12 +1,4 @@
-﻿#region
-
-using GeoStrike.Application.UseCases.PlayerBuilding;
-using GeoStrike.Comunication.Requests;
-using Microsoft.AspNetCore.Mvc;
-
-#endregion
-
-namespace GeoStrike.API.Controllers;
+﻿namespace GeoStrike.API.Controllers;
 
 [ApiController, Route("[controller]")]
 public class BuildingController : ControllerBase

@@ -1,12 +1,4 @@
-﻿#region
-
-using GeoStrike.Application.UseCases.PlayerBuilding;
-using GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
-using Microsoft.Extensions.DependencyInjection;
-
-#endregion
-
-namespace GeoStrike.Application;
+﻿namespace GeoStrike.Application;
 
 public static class DependecyInjectionExtension
 {

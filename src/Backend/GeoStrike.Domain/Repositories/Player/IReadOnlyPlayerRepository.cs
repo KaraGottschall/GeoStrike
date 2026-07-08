@@ -1,11 +1,4 @@
-﻿#region
-
-using PlayerEntity = GeoStrike.Domain.Entities.Player;
-using PlayerBuildingEntity = GeoStrike.Domain.Entities.PlayerBuilding;
-
-#endregion
-
-namespace GeoStrike.Domain.Repositories.Player;
+﻿namespace GeoStrike.Domain.Repositories.Player;
 
 public interface IReadOnlyPlayerRepository
 {
