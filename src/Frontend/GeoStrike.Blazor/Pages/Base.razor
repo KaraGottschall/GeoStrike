@@ -1,0 +1,42 @@
+﻿@page "/base"
+@using GeoStrike.Comunication.Requests
+@inject HttpClient Http
+
+<div class="container" style="padding: 20px; font-family: sans-serif;">
+    <h2>Painel de Comando - Base</h2>
+
+    <div class="card" style="border: 1px solid #333; padding: 20px; width: 300px; background: #f9f9f9;">
+        <h3>Refinaria de Petróleo</h3>
+        <p>Status: @statusMensagem</p>
+
+        <button class="btn" style="background: green; color: white; padding: 10px;" @onclick="EvoluirEdificio">
+            Evoluir Prédio
+        </button>
+    </div>
+</div>
+
+@code {
+    private string statusMensagem = "Pronto para evoluir";
+
+    // ID fictício de um prédio para testar (substitua por um Guid real do seu banco depois)
+    private readonly Guid edificioIdIdFicticio = Guid.Parse("e3b0c442-98fc-1c14-9afb-f4c8996fb924");
+
+    private async Task EvoluirEdificio()
+    {
+        statusMensagem = "Enviando comando...";
+
+        // Cria o request usando a classe do seu projeto Shared.Comunication
+        StartEvolvingBuildingRequest request = new()
+        {
+            BuildingId = edificioIdIdFicticio
+        };
+
+        // Faz o POST real para a sua API (igualzinho você fez no arquivo .http)
+        HttpResponseMessage response = await Http.PostAsJsonAsync("Building", request);
+
+        statusMensagem = response.IsSuccessStatusCode
+            ? "Evolução iniciada com sucesso!"
+            : "Erro: Saldo insuficiente ou prédio já evoluindo.";
+    }
+
+}

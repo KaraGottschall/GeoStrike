@@ -2,6 +2,7 @@
 
 using System.Globalization;
 using GeoStrike.Application;
+using GeoStrike.Infrastructure;
 using GeoStrike.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -44,6 +46,16 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.RequestCultureProviders = [new AcceptLanguageHeaderRequestCultureProvider()];
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("GeoStrikeCors", policy =>
+    {
+        policy.WithOrigins("https://localhost:7286")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 WebApplication app = builder.Build();
 
 if (app.Environment.IsDevelopment()) app.MapOpenApi();
@@ -53,7 +65,7 @@ GeoStrikeDbContext dbContext = scope.ServiceProvider.GetRequiredService<GeoStrik
 dbContext.Database.Migrate();
 
 app.UseHttpsRedirection();
-
+app.UseCors("GeoStrikeCors");
 app.UseAuthorization();
 
 app.MapControllers();

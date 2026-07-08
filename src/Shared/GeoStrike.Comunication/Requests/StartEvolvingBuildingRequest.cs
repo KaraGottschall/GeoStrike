@@ -2,6 +2,7 @@
 
 public class StartEvolvingBuildingRequest
 {
-    public Guid Id { get; set; }
+    public Guid BuildingId { get; set; }
+    public Guid PlayerId { get; set; }
     public DateTime? CompletionDate { get; set; }
 }
