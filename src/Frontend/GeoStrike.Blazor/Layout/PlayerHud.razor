@@ -1,0 +1,15 @@
+﻿@namespace GeoStrike.Blazor.Layout
+@inherits ComponentBase
+
+<MudPaper Elevation="2" Class="d-flex align-center gap-4 pa-2 bg-dark">
+    <div class="d-flex align-center gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.LocalGasStation" Color="Color.Warning"/>
+        <MudText Typo="Typo.body2" Color="Color.Secondary">Petróleo:</MudText>
+        <MudText Typo="Typo.body2" Class="text-bold">@petroleo</MudText>
+    </div>
+    <div class="d-flex align-center gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.Bolt" Color="Color.Warning"/>
+        <MudText Typo="Typo.body2" Color="Color.Secondary">Energia:</MudText>
+        <MudText Typo="Typo.body2" Class="text-bold">@energia/@maxEnergia</MudText>
+    </div>
+</MudPaper>

@@ -1,26 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">GeoStrike.Blazor</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿<div class="nav-container">
+    <NavLink href="base" class="nav-item" Match="NavLinkMatch.All">
+        <MudIcon Icon="@Icons.Material.Filled.Home" Size="Size.Medium"/>
+        <span>Base</span>
+    </NavLink>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Base
-            </NavLink>
-        </div>
-    </nav>
+    <NavLink href="map" class="nav-item">
+        <MudIcon Icon="@Icons.Material.Filled.Map" Size="Size.Medium"/>
+        <span>Mapa</span>
+    </NavLink>
+
+    <NavLink href="tech" class="nav-item">
+        <MudIcon Icon="@Icons.Material.Filled.Science" Size="Size.Medium"/>
+        <span>Tecnologia</span>
+    </NavLink>
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu() { collapseNavMenu = !collapseNavMenu; }
 }
