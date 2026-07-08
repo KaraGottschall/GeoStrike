@@ -8,9 +8,9 @@ using static GeoStrike.Exception.Resources.ResourceMessagesExceptions;
 
 namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
 
-public class StartEvolvingBuildingValidator : AbstractValidator<StartEvolvingPlayerBuildingRequest>
+public class StartEvolvingPlayerBuildingValidator : AbstractValidator<StartEvolvingPlayerBuildingRequest>
 {
-    public StartEvolvingBuildingValidator()
+    public StartEvolvingPlayerBuildingValidator()
     {
         RuleFor(x => x.BuildingId)
             .NotEmpty()

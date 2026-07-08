@@ -49,7 +49,7 @@ public class StartEvolvingPlayerBuildingUseCase(
 
     private static async Task ValidateAndThrowOnFailures(StartEvolvingPlayerBuildingRequest request)
     {
-        StartEvolvingBuildingValidator validator = new();
+        StartEvolvingPlayerBuildingValidator validator = new();
         ValidationResult result = await validator.ValidateAsync(request);
 
         if (result.IsValid) return;
