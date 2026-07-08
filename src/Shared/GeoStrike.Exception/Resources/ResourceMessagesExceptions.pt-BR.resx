@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
-    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="root"
                 xmlns="">
         <xsd:element name="root" msdata:IsDataSet="true">
 
@@ -25,5 +26,14 @@
     </resheader>
     <data name="BUILDING_ALREADY_EVOLVING" xml:space="preserve">
         <value>Não é possível evoluir enquanto já está evoluindo.</value>
+    </data>
+    <data name="BUILDING_ID_REQUIRED" xml:space="preserve">
+        <value>O ID do edifício é obrigatório.</value>
+    </data>
+    <data name="PLAYER_ID_REQUIRED" xml:space="preserve">
+        <value>O ID do jogador é obrigatório.</value>
+    </data>
+    <data name="UNKNOWN_ERROR" xml:space="preserve">
+        <value>Ocorreu um erro desconhecido. Por favor, tente novamente mais tarde.</value>
     </data>
 </root>

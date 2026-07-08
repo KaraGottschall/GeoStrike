@@ -1,6 +1,7 @@
 #region
 
 using System.Globalization;
+using GeoStrike.API.Filters;
 using GeoStrike.Application;
 using GeoStrike.Infrastructure;
 using GeoStrike.Infrastructure.DataAccess;
@@ -44,6 +45,11 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.SupportedUICultures = supportedCultures;
 
     options.RequestCultureProviders = [new AcceptLanguageHeaderRequestCultureProvider()];
+});
+
+builder.Services.AddMvc(options =>
+{
+    options.Filters.Add<ExceptionFilter>();
 });
 
 builder.Services.AddCors(options =>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoStrike.Exceptions.Resources {
+namespace GeoStrike.Exception.Resources {
     using System;
     
     
@@ -18,7 +18,7 @@ namespace GeoStrike.Exceptions.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ResourceMessagesExceptions {
@@ -35,10 +35,10 @@ namespace GeoStrike.Exceptions.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GeoStrike.Exceptions.Resources.ResourceMessagesExceptions", typeof(ResourceMessagesExceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GeoStrike.Exception.Resources.ResourceMessagesExceptions", typeof(ResourceMessagesExceptions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -50,7 +50,7 @@ namespace GeoStrike.Exceptions.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -65,6 +65,33 @@ namespace GeoStrike.Exceptions.Resources {
         public static string BUILDING_ALREADY_EVOLVING {
             get {
                 return ResourceManager.GetString("BUILDING_ALREADY_EVOLVING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Building ID is required..
+        /// </summary>
+        public static string BUILDING_ID_REQUIRED {
+            get {
+                return ResourceManager.GetString("BUILDING_ID_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Player ID is required..
+        /// </summary>
+        public static string PLAYER_ID_REQUIRED {
+            get {
+                return ResourceManager.GetString("PLAYER_ID_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error occurred. Please try again later..
+        /// </summary>
+        public static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
             }
         }
     }

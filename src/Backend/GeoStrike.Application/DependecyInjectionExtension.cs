@@ -1,7 +1,7 @@
 ﻿#region
 
-using GeoStrike.Application.UseCases.Building;
-using GeoStrike.Application.UseCases.Building.Evolve;
+using GeoStrike.Application.UseCases.PlayerBuilding;
+using GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
@@ -14,7 +14,7 @@ public static class DependecyInjectionExtension
     {
         public void AddApplication()
         {
-            serviceCollection.AddScoped<IStartEvolvingBuildingUseCase, StartEvolvingBuildingUseCase>();
+            serviceCollection.AddScoped<IStartEvolvingPlayerBuildingUseCase, StartEvolvingPlayerBuildingUseCase>();
         }
     }
 }

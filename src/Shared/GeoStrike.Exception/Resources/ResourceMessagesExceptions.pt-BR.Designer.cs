@@ -38,7 +38,7 @@ namespace GeoStrike.Exceptions.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GeoStrike.Exceptions.Resources.ResourceMessagesExceptions.pt-BR", typeof(ResourceMessagesExceptions_pt_BR).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GeoStrike.Exception.Resources.ResourceMessagesExceptions.pt-BR", typeof(ResourceMessagesExceptions_pt_BR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -65,6 +65,33 @@ namespace GeoStrike.Exceptions.Resources {
         internal static string BUILDING_ALREADY_EVOLVING {
             get {
                 return ResourceManager.GetString("BUILDING_ALREADY_EVOLVING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O ID do edifício é obrigatório..
+        /// </summary>
+        internal static string BUILDING_ID_REQUIRED {
+            get {
+                return ResourceManager.GetString("BUILDING_ID_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O ID do jogador é obrigatório..
+        /// </summary>
+        internal static string PLAYER_ID_REQUIRED {
+            get {
+                return ResourceManager.GetString("PLAYER_ID_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro desconhecido. Por favor, tente novamente mais tarde..
+        /// </summary>
+        internal static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
             }
         }
     }

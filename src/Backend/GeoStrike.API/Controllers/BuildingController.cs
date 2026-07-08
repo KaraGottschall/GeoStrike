@@ -1,6 +1,6 @@
 ﻿#region
 
-using GeoStrike.Application.UseCases.Building;
+using GeoStrike.Application.UseCases.PlayerBuilding;
 using GeoStrike.Comunication.Requests;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,8 +13,8 @@ public class BuildingController : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> StartEvolvingBuilding(
-        [FromBody] StartEvolvingBuildingRequest request,
-        [FromServices] IStartEvolvingBuildingUseCase service
+        [FromBody] StartEvolvingPlayerBuildingRequest request,
+        [FromServices] IStartEvolvingPlayerBuildingUseCase service
     )
     {
         bool result = await service.ExecuteAsync(request);

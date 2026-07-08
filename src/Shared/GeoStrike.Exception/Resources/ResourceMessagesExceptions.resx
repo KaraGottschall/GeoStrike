@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
-    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="root"
                 xmlns="">
         <xsd:element name="root" msdata:IsDataSet="true">
 
@@ -25,5 +26,14 @@
     </resheader>
     <data name="BUILDING_ALREADY_EVOLVING" xml:space="preserve">
         <value>Cannot start evolving when it is already evolving.</value>
+    </data>
+    <data name="BUILDING_ID_REQUIRED" xml:space="preserve">
+        <value>The Building ID is required.</value>
+    </data>
+    <data name="PLAYER_ID_REQUIRED" xml:space="preserve">
+        <value>The Player ID is required.</value>
+    </data>
+    <data name="UNKNOWN_ERROR" xml:space="preserve">
+        <value>An unknown error occurred. Please try again later.</value>
     </data>
 </root>

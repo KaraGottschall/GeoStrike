@@ -1,6 +1,12 @@
-﻿namespace GeoStrike.Domain.Repositories.Building;
+﻿#region
+
+using GeoStrike.Domain.Enums;
+
+#endregion
+
+namespace GeoStrike.Domain.Repositories.Building;
 
 public interface IReadOnlyBuildingRepository
 {
-    Task<int> CurrentBuildingLevel();
+    Task<BuildingType> GetBuildingTypeById(Guid buildingId);
 }

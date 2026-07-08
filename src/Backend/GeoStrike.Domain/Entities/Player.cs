@@ -10,4 +10,6 @@ public class Player
     public int Oil { get; set; }
 
     public ICollection<PlayerBuilding> Buildings { get; set; } = new List<PlayerBuilding>();
+
+    public bool HasMoneyEnough(double costToUpgrade) => Money >= costToUpgrade;
 }

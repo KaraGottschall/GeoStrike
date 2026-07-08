@@ -9,7 +9,7 @@
 
     <ItemGroup>
         <EmbeddedResource Update="Resources\ResourceMessagesExceptions.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
+            <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>ResourceMessagesExceptions.Designer.cs</LastGenOutput>
         </EmbeddedResource>
         <EmbeddedResource Update="Resources\ResourceMessagesExceptions.pt-BR.resx">

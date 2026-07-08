@@ -2,7 +2,10 @@
 
 using GeoStrike.Domain.Repositories.Building;
 using GeoStrike.Domain.Repositories.Player;
-using GeoStrike.Infrastructure.DataAccess.Repository.Building;
+using GeoStrike.Domain.Repositories.PlayerBuilding;
+using GeoStrike.Infrastructure.DataAccess.Repositories.Building;
+using GeoStrike.Infrastructure.DataAccess.Repositories.Player;
+using GeoStrike.Infrastructure.DataAccess.Repositories.PlayerBuilding;
 using Microsoft.Extensions.DependencyInjection;
 
 #endregion
@@ -17,6 +20,7 @@ public static class DependecyInjectionExtension
         {
             serviceCollection.AddScoped<IReadOnlyBuildingRepository, BuildingRepository>();
             serviceCollection.AddScoped<IReadOnlyPlayerRepository, PlayerRepository>();
+            serviceCollection.AddScoped<IWriteOnlyPlayerBuildingRepository, PlayerBuildingRepository>();
         }
     }
 }

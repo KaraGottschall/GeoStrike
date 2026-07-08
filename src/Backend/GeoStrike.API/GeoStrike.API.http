@@ -1,10 +1,10 @@
-@Host = https://localhost:7169
+@Host = https://localhost:7200
 
 ### Iniciar a evolução de um edifício
 POST {{Host}}/Building
 Content-Type: application/json
 
 {
-  "id": "e3b0c442-98fc-1c14-9afb-f4c8996fb924",
-  "completionDate": "2026-07-06T16:00:00Z"
+  "playerId": "41D3A083-4137-439A-8688-B9C6F6A9AB8C",
+  "buildingId": "CDEAFBCE-68B1-4127-940A-A6211B1A43D7"
 }
