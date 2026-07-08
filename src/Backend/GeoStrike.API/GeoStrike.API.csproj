@@ -1,18 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
+      <UserSecretsId>8ee793cc-8438-42c9-9a51-85c32ca2b50a</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.OpenApi" Version="2.7.5"/>
+        <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,12 +23,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj"/>
-        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
-        <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj" />
+        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj" />
+        <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj" />
 
-        <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj"/>
-        <ProjectReference Include="..\..\Shared\GeoStrike.Exception\GeoStrike.Exception.csproj"/>
+        <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj" />
+        <ProjectReference Include="..\..\Shared\GeoStrike.Exception\GeoStrike.Exception.csproj" />
     </ItemGroup>
 
 </Project>
