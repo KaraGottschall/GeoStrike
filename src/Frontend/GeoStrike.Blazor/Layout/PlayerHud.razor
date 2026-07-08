@@ -1,20 +1,15 @@
 ﻿@namespace GeoStrike.Blazor.Layout
 @inherits ComponentBase
 
-<div class="hud-container">
-    <div class="hud-item">
-        <span class="hud-icon">🛢️</span>
-        <span class="hud-label">Petróleo:</span>
-        <span class="hud-value">@petroleo.ToString("N0")</span>
+<MudPaper Elevation="2" Class="d-flex align-center gap-4 pa-2 bg-dark">
+    <div class="d-flex align-center gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.LocalGasStation" Color="Color.Warning"/>
+        <MudText Typo="Typo.body2" Color="Color.Secondary">Petróleo:</MudText>
+        <MudText Typo="Typo.body2" Class="text-bold">@petroleo</MudText>
     </div>
-    <div class="hud-item">
-        <span class="hud-icon">⚡</span>
-        <span class="hud-label">Energia:</span>
-        <span class="hud-value">@energia/@maxEnergia</span>
+    <div class="d-flex align-center gap-1">
+        <MudIcon Icon="@Icons.Material.Filled.Bolt" Color="Color.Warning"/>
+        <MudText Typo="Typo.body2" Color="Color.Secondary">Energia:</MudText>
+        <MudText Typo="Typo.body2" Class="text-bold">@energia/@maxEnergia</MudText>
     </div>
-    <div class="hud-item">
-        <span class="hud-icon">💰</span>
-        <span class="hud-label">Créditos:</span>
-        <span class="hud-value">$@creditos.ToString("N0")</span>
-    </div>
-</div>
+</MudPaper>

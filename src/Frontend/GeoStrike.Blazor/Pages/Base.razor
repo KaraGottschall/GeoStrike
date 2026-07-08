@@ -2,17 +2,61 @@
 @using GeoStrike.Communication.Requests
 @inject HttpClient Http
 
-<div class="container" style="padding: 20px; font-family: sans-serif;">
-    <h2>Painel de Comando - Base</h2>
+<div class="mt-8 px-4" style="font-family: 'Inter', sans-serif;">
 
-    <div class="card" style="border: 1px solid #333; padding: 20px; width: 300px; background: #f9f9f9;">
-        <h3>Refinaria de Petróleo</h3>
-        <p>Status: @statusMensagem</p>
+    <MudText Typo="Typo.body2" Class="text-uppercase font-weight-bold tracking-wider mb-6"
+             Style="color: var(--mud-palette-text-secondary); letter-spacing: 1.5px;">
+        Painel de Comando / Base
+    </MudText>
 
-        <button class="btn" style="background: green; color: white; padding: 10px;" @onclick="EvoluirEdificio">
+    <MudPaper Elevation="0" Class="pa-5 rounded-xl"
+              Style="width: 340px; background-color: var(--mud-palette-surface); border: 1px solid #22232b;">
+
+        <div class="d-flex align-center justify-space-between mb-2">
+            <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase"
+                     Style="color: var(--mud-palette-primary); letter-spacing: 1px;">
+                Produção de Recurso
+            </MudText>
+
+            <span class="px-2 py-0.5 rounded-pill font-weight-bold"
+                  style="font-size: 11px; background-color: rgba(0, 230, 118, 0.1); color: var(--mud-palette-success);">
+                ● @statusMensagem
+            </span>
+        </div>
+
+        <MudText Typo="Typo.h5" Class="font-weight-bold mb-1" Style="color: var(--mud-palette-text-primary);">
+            Refinaria de Petróleo
+        </MudText>
+
+        <MudText Typo="Typo.body2" Class="mb-4" Style="color: var(--mud-palette-text-secondary); font-size: 13px;">
+            Estrutura industrial voltada para a extração e refino de crude bruto da região tática.
+        </MudText>
+
+        <hr style="border: 0; border-top: 1px solid #22232b; margin-bottom: 16px;"/>
+
+        <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase d-block mb-2"
+                 Style="color: var(--mud-palette-text-secondary);">
+            Especificações de Upgrade
+        </MudText>
+
+        <div class="d-flex gap-2 mb-5">
+            <span class="px-3 py-1 rounded"
+                  style="font-size: 11px; background-color: #22232b; color: #fff; font-weight: 600;">NÍVEL 1</span>
+            <span class="px-3 py-1 rounded"
+                  style="font-size: 11px; background-color: rgba(112, 85, 255, 0.1); color: var(--mud-palette-primary); font-weight: 600;">+15% PROD</span>
+        </div>
+
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   FullWidth="true"
+                   DropShadow="false"
+                   OnClick="EvoluirEdificio"
+                   Class="py-2 rounded-lg font-weight-bold text-capitalize"
+                   Style="font-size: 13px; letter-spacing: 0.5px; box-shadow: none;">
             Evoluir Prédio
-        </button>
-    </div>
+        </MudButton>
+
+    </MudPaper>
 </div>
 
 @code {
@@ -34,6 +78,16 @@
         statusMensagem = response.IsSuccessStatusCode
             ? "Evolução iniciada com sucesso!"
             : "Erro: Saldo insuficiente ou prédio já evoluindo.";
+    }
+
+    private Color GetStatusColor()
+    {
+        if (statusMensagem.Contains("Pronto")) return Color.Info;
+        if (statusMensagem.Contains("Enviando")) return Color.Warning;
+        if (statusMensagem.Contains("sucesso")) return Color.Success;
+        if (statusMensagem.Contains("Erro")) return Color.Error;
+
+        return Color.Default;
     }
 
 }
