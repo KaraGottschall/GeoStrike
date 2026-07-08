@@ -18,20 +18,17 @@
 @code {
     private string statusMensagem = "Pronto para evoluir";
 
-    // ID fictício de um prédio para testar (substitua por um Guid real do seu banco depois)
     private readonly Guid edificioIdIdFicticio = Guid.Parse("e3b0c442-98fc-1c14-9afb-f4c8996fb924");
 
     private async Task EvoluirEdificio()
     {
         statusMensagem = "Enviando comando...";
 
-        // Cria o request usando a classe do seu projeto Shared.Comunication
         StartEvolvingPlayerBuildingRequest request = new()
         {
             BuildingId = edificioIdIdFicticio
         };
 
-        // Faz o POST real para a sua API (igualzinho você fez no arquivo .http)
         HttpResponseMessage response = await Http.PostAsJsonAsync("Building", request);
 
         statusMensagem = response.IsSuccessStatusCode

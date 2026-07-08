@@ -1,0 +1,20 @@
+﻿@namespace GeoStrike.Blazor.Layout
+@inherits ComponentBase
+
+<div class="hud-container">
+    <div class="hud-item">
+        <span class="hud-icon">🛢️</span>
+        <span class="hud-label">Petróleo:</span>
+        <span class="hud-value">@petroleo.ToString("N0")</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-icon">⚡</span>
+        <span class="hud-label">Energia:</span>
+        <span class="hud-value">@energia/@maxEnergia</span>
+    </div>
+    <div class="hud-item">
+        <span class="hud-icon">💰</span>
+        <span class="hud-label">Créditos:</span>
+        <span class="hud-value">$@creditos.ToString("N0")</span>
+    </div>
+</div>
