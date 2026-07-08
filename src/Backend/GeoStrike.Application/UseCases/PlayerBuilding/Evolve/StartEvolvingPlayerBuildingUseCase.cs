@@ -42,7 +42,7 @@ public class StartEvolvingPlayerBuildingUseCase(
 
         if (!player.HasMoneyEnough(costToUpgrade)) return false;
 
-        writeOnlyPlayerBuildingRepository.IncreasePlayerBuildingLevelBy(request.PlayerId, request.BuildingId, 1);
+        await writeOnlyPlayerBuildingRepository.IncreasePlayerBuildingLevelBy(request.PlayerId, request.BuildingId, 1);
 
         return true;
     }
