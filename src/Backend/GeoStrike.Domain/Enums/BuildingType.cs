@@ -1,6 +1,6 @@
 ﻿namespace GeoStrike.Domain.Enums;
 
-public enum BuildingType
+public enum BuildingType : byte
 {
     HeadQuarter
 }

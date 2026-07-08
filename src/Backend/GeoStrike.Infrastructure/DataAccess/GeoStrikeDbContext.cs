@@ -11,6 +11,7 @@ public class GeoStrikeDbContext(DbContextOptions dbContextOptions) : DbContext(d
 {
     public DbSet<Building> Buildings { get; set; }
     public DbSet<Player> Players { get; set; }
+    public DbSet<PlayerBuilding> PlayerBuildings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

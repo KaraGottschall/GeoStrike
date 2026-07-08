@@ -8,4 +8,6 @@ public class Player
     public double Money { get; set; }
     public int Gold { get; set; }
     public int Oil { get; set; }
+
+    public ICollection<PlayerBuilding> Buildings { get; set; } = new List<PlayerBuilding>();
 }
