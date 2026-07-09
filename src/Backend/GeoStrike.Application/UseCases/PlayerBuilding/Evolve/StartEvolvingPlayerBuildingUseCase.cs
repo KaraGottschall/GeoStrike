@@ -14,18 +14,18 @@ public class StartEvolvingPlayerBuildingUseCase(
     {
         await ValidateAndThrowOnFailures(request);
 
-        PlayerEntity? player = await readOnlyPlayerRepository.GetByIdAsync(request.PlayerId)
-            ?? throw new KeyNotFoundException("Jogador não encontrado.");
+        PlayerEntity? player = await readOnlyPlayerRepository.GetByIdAsync(request.PlayerId);
+        if (player == null) throw new KeyNotFoundException("Jogador não encontrado.");
 
-        PlayerBuildingEntity? playerBuilding = player.Buildings
-            .FirstOrDefault(pb => pb.BuildingId == request.BuildingId)
-            ?? throw new InvalidOperationException("O jogador não possui essa construção.");
+        PlayerBuildingEntity? playerBuilding =
+            player.Buildings.FirstOrDefault(pb => pb.BuildingId == request.BuildingId);
+
+        if (playerBuilding == null) throw new InvalidOperationException("O jogador não possui essa construção.");
 
         // if (request.CompletionDate.HasValue && request.CompletionDate > DateTime.UtcNow)
         //     throw new InvalidOperationException(ResourceMessagesExceptions.BUILDING_ALREADY_EVOLVING);
 
-        double costToUpgrade =
-            BuildingRules.CalculateMoneyCostToEvolve(playerBuilding.Building.Type, playerBuilding.Level + 1);
+        double costToUpgrade = UpgradingRules.CalculateConstructionFee(BuildingType.HeadQuarter, playerBuilding.Level);
 
         if (!player.HasMoneyEnough(costToUpgrade)) return false;
 

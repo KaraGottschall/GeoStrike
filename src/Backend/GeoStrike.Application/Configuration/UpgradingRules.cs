@@ -1,17 +1,43 @@
-﻿namespace GeoStrike.Application.Configuration;
+﻿// Solução: GeoStrike | Projeto: GeoStrike.Application
+// Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
+// Criado em: 09/07/2026 por Kara Gottschall
 
-public class UpgradingRules
+namespace GeoStrike.Application.Configuration;
+
+public static class UpgradingRules
 {
-    // O valor final do custo de upgrade sera:
-    // (valor da primeira unidade daquele edificio * multiplicador padrao daquele edificio ^ nível atual + Taxa de construcao
+    private static readonly Dictionary<string, double> JobRoleSalary = new()
+    {
+        { "Engineer", 2500.00 },
+        { "MasterBuilder", 1000.00 },
+        { "Workman", 800.00 },
+    };
 
+    public static double CalculateConstructionFee(BuildingType buildingType, int currentLevel)
+    {
+        const double baseCost = 1.0;
 
+        double evolutionMultiplier = BuildingRules.EvolutionCostMultiplier(buildingType);
+        double baseConstructionFee = BuildingRules.GetConstructionFee(buildingType);
 
-    // A taxa de construcao devera envolver, no futuro, custos como quantidade de funcionarios da Construtora (evoluível por pesquisa e investimento em economia) tais quais:
+        double structuralCost = baseCost * Math.Pow(evolutionMultiplier, currentLevel) + baseConstructionFee;
 
-    /* (Soma)
-     * Quantidade de funcionarios especializados na construcao daquele edificio * Salario minimo da categoria do funcionario (gerente de obras, engenheiro etc etc)
-     * 
-     * Custos com materiais de construcao (cada tipo de material envolvido terá um valor por unidade)
-     */
+        return structuralCost + CalculatePayroll(buildingType) + CalculateMaterialCosts(buildingType, currentLevel);
+    }
+
+    private static double CalculatePayroll(BuildingType buildingType) =>
+        /*
+         * Quantidade de funcionarios especializados na construcao daquele edificio * Salario minimo da categoria do funcionario
+         * (gerente de obras, engenheiro etc etc)
+         */
+        // ideia inicial: criar um dicionario ou aqui ou no banco de dados de <funcionario, salario> e trazer o valor
+        1.0;
+
+    private static double CalculateMaterialCosts(BuildingType buildingType, int currentLevel) =>
+        /*
+         * Custos com materiais de construcao (cada tipo de material envolvido terá um valor por unidade)
+         *
+         * Pode ser levado em conta os materiais que o jogador ja tem em estoque
+         */
+        1.0;
 }

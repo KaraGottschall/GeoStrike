@@ -6,21 +6,17 @@ namespace GeoStrike.Application.Configuration;
 
 public class BuildingRules
 {
-    public static double CalculateMoneyCostToEvolve(BuildingType buildingType, int targetLevel)
+    public static double EvolutionCostMultiplier(BuildingType buildingType) => buildingType switch
     {
-        return buildingType switch
-        {
-            BuildingType.HeadQuarter => targetLevel * 1.2,
-            var _ => throw new ArgumentOutOfRangeException(nameof(buildingType), buildingType, null)
-        };
-    }
+        BuildingType.HeadQuarter => 1.02,
+        BuildingType.OilRefinary => 1.04,
+        var _ => throw new ArgumentOutOfRangeException(nameof(buildingType), buildingType, null)
+    };
 
-    public static TimeSpan CalculateTimeSpentOnEvolution(BuildingType buildingType, int targetLevel)
+    public static double GetConstructionFee(BuildingType buildingType) => buildingType switch
     {
-        return buildingType switch
-        {
-            BuildingType.HeadQuarter => TimeSpan.FromMinutes(targetLevel * 1.2),
-            var _ => TimeSpan.FromMinutes(3)
-        };
-    }
+        BuildingType.HeadQuarter => 200,
+        BuildingType.OilRefinary => 240,
+        var _ => throw new ArgumentOutOfRangeException(nameof(buildingType), buildingType, null)
+    };
 }
