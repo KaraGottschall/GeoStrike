@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Backend\GeoStrike.Domain.Catalog\GeoStrike.Domain.Catalog.csproj"/>
         <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj"/>
     </ItemGroup>
 

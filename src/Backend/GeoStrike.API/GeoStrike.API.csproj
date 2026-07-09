@@ -24,6 +24,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\GeoStrike.Application\GeoStrike.Application.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Domain.Catalog\GeoStrike.Domain.Catalog.csproj"/>
         <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
         <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj"/>
 

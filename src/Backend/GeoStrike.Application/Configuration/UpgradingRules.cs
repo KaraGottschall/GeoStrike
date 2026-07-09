@@ -2,7 +2,7 @@
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
 // Criado em: 09/07/2026 por Kara Gottschall
 
-using GeoStrike.Domain.Catalogs;
+using GeoStrike.Domain.Catalog;
 
 namespace GeoStrike.Application.Configuration;
 

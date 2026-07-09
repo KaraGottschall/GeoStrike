@@ -1,6 +1,6 @@
 ﻿@page "/base"
 @using GeoStrike.Communication.Requests
-@using GeoStrike.Domain.Catalogs
+@using GeoStrike.Domain.Catalog
 @using GeoStrike.Domain.Entities
 @using GeoStrike.Domain.Models
 @inject HttpClient Http
@@ -16,7 +16,7 @@
         {
             <MudProgressCircular Color="Color.Primary" Indeterminate="true"/>
         }
-        else if (_jogador.Buildings == null || !_jogador.Buildings.Any())
+        else if (!_jogador.Buildings.Any())
         {
             <MudText Typo="Typo.body1">Você ainda não possui edifícios construídos nesta base.</MudText>
         }

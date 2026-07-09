@@ -9,6 +9,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Shared\GeoStrike.Communication\GeoStrike.Communication.csproj"/>
         <ProjectReference Include="..\..\Shared\GeoStrike.Exception\GeoStrike.Exception.csproj"/>
+        <ProjectReference Include="..\GeoStrike.Domain.Catalog\GeoStrike.Domain.Catalog.csproj"/>
 
         <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
         <ProjectReference Include="..\GeoStrike.Infrastructure\GeoStrike.Infrastructure.csproj"/>

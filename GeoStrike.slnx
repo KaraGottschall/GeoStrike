@@ -1,19 +1,20 @@
 <Solution>
     <Folder Name="/Backend/">
-        <Project Path="src/Backend/GeoStrike.API/GeoStrike.API.csproj"/>
-        <Project Path="src/Backend/GeoStrike.Application/GeoStrike.Application.csproj"/>
-        <Project Path="src/Backend/GeoStrike.Domain/GeoStrike.Domain.csproj"/>
-        <Project Path="src/Backend/GeoStrike.Infrastructure/GeoStrike.Infrastructure.csproj"/>
+        <Project Path="src/Backend/GeoStrike.API/GeoStrike.API.csproj" />
+        <Project Path="src/Backend/GeoStrike.Application/GeoStrike.Application.csproj" />
+        <Project Path="src/Backend/GeoStrike.Domain.Catalog/GeoStrike.Domain.Catalog.csproj" />
+        <Project Path="src/Backend/GeoStrike.Domain/GeoStrike.Domain.csproj" />
+        <Project Path="src/Backend/GeoStrike.Infrastructure/GeoStrike.Infrastructure.csproj" />
     </Folder>
     <Folder Name="/Frontend/">
-        <Project Path="src/Frontend/GeoStrike.Blazor/GeoStrike.Blazor.csproj"/>
+        <Project Path="src/Frontend/GeoStrike.Blazor/GeoStrike.Blazor.csproj" />
     </Folder>
     <Folder Name="/Shared/">
-        <Project Path="src/Shared/GeoStrike.Communication/GeoStrike.Communication.csproj"/>
-        <Project Path="src/Shared/GeoStrike.Exception/GeoStrike.Exception.csproj"/>
+        <Project Path="src/Shared/GeoStrike.Communication/GeoStrike.Communication.csproj" />
+        <Project Path="src/Shared/GeoStrike.Exception/GeoStrike.Exception.csproj" />
     </Folder>
     <Folder Name="/Tests/">
-        <Project Path="tests/CommonTestUtilities/CommonTestUtilities.csproj"/>
-        <Project Path="tests/Validator.Tests/Validator.Tests.csproj"/>
+        <Project Path="tests/CommonTestUtilities/CommonTestUtilities.csproj" />
+        <Project Path="tests/Validator.Tests/Validator.Tests.csproj" />
     </Folder>
 </Solution>

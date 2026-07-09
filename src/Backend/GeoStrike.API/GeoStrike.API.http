@@ -8,3 +8,7 @@ Content-Type: application/json
   "playerId": "41D3A083-4137-439A-8688-B9C6F6A9AB8C",
   "buildingId": "CDEAFBCE-68B1-4127-940A-A6211B1A43D7"
 }
+
+### Recuperar dados de um jogador
+GET {{Host}}/Player/41D3A083-4137-439A-8688-B9C6F6A9AB8C
+Content-Type: application/json
