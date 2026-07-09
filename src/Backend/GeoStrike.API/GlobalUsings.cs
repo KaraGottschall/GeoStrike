@@ -1,4 +1,8 @@
-﻿#region
+﻿// Solução: GeoStrike | Projeto: GeoStrike.API
+// Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
+// Criado em: 08/07/2026 por Kara Gottschall
+
+#region
 
 global using GeoStrike.Application.UseCases.PlayerBuilding;
 global using GeoStrike.Communication.Requests;

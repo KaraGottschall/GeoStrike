@@ -1,3 +1,7 @@
+// Solução: GeoStrike | Projeto: GeoStrike.API
+// Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
+// Criado em: 07/07/2026 por Kara Gottschall
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

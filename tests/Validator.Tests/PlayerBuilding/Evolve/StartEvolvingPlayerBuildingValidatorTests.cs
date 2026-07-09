@@ -1,4 +1,8 @@
-﻿#region
+﻿// Solução: GeoStrike | Projeto: Validator.Tests
+// Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
+// Criado em: 08/07/2026 por Kara Gottschall
+
+#region
 
 using CommonTestUtilities.Requests;
 using FluentValidation.Results;

@@ -1,3 +1,7 @@
+// Solução: GeoStrike | Projeto: GeoStrike.Blazor
+// Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
+// Criado em: 07/07/2026 por Kara Gottschall
+
 #region
 
 using GeoStrike.Blazor;
