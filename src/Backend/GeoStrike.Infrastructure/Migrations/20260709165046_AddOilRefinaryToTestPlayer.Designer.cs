@@ -4,6 +4,7 @@ using GeoStrike.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeoStrike.Infrastructure.Migrations
 {
     [DbContext(typeof(GeoStrikeDbContext))]
-    partial class GeoStrikeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260709165046_AddOilRefinaryToTestPlayer")]
+    partial class AddOilRefinaryToTestPlayer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,14 +122,6 @@ namespace GeoStrike.Infrastructure.Migrations
                             Id = new Guid("3cd60eca-d0ce-4f25-8501-938b1e07ecbb"),
                             BuildingId = new Guid("cdeafbce-68b1-4127-940a-a6211b1a43d7"),
                             Level = 2,
-                            PlayerId = new Guid("41d3a083-4137-439a-8688-b9c6f6a9ab8c"),
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            Id = new Guid("4a99048b-403e-417b-8efa-943322e46816"),
-                            BuildingId = new Guid("b9336dd7-cfaa-4b03-a0b3-d46af7a94b96"),
-                            Level = 1,
                             PlayerId = new Guid("41d3a083-4137-439a-8688-b9c6f6a9ab8c"),
                             Quantity = 1
                         });

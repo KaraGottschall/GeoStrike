@@ -14,16 +14,12 @@ public class StartEvolvingPlayerBuildingUseCase(
     {
         await ValidateAndThrowOnFailures(request);
 
-        PlayerEntity? player = await readOnlyPlayerRepository.GetByIdAsync(request.PlayerId);
-
-        if (player == null)
-            throw new KeyNotFoundException("Jogador não encontrado.");
+        PlayerEntity? player = await readOnlyPlayerRepository.GetByIdAsync(request.PlayerId)
+            ?? throw new KeyNotFoundException("Jogador não encontrado.");
 
         PlayerBuildingEntity? playerBuilding = player.Buildings
-            .FirstOrDefault(pb => pb.BuildingId == request.BuildingId);
-
-        if (playerBuilding == null)
-            throw new InvalidOperationException("O jogador não possui essa construção.");
+            .FirstOrDefault(pb => pb.BuildingId == request.BuildingId)
+            ?? throw new InvalidOperationException("O jogador não possui essa construção.");
 
         // if (request.CompletionDate.HasValue && request.CompletionDate > DateTime.UtcNow)
         //     throw new InvalidOperationException(ResourceMessagesExceptions.BUILDING_ALREADY_EVOLVING);

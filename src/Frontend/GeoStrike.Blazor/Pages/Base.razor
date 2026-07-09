@@ -80,7 +80,7 @@
                                Color="Color.Primary"
                                FullWidth="true"
                                DropShadow="false"
-                               OnClick="() => EvoluirEdificio(edificio.Id)"
+                               OnClick="() => EvoluirEdificio(edificio.BuildingId)"
                                Class="py-2 rounded-lg font-weight-bold text-capitalize"
                                Style="font-size: 13px; letter-spacing: 0.5px; box-shadow: none;">
                         Evoluir Prédio
@@ -129,7 +129,8 @@
 
         StartEvolvingPlayerBuildingRequest request = new()
         {
-            BuildingId = buildingId
+            BuildingId = buildingId,
+            PlayerId = Guid.Parse("41D3A083-4137-439A-8688-B9C6F6A9AB8C")
         };
 
         HttpResponseMessage response = await Http.PostAsJsonAsync("Building", request);
