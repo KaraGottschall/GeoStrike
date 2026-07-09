@@ -16,16 +16,18 @@ public static class BuildingCatalog
             Name = "Head Quarter",
             Description = "The command center of your tactical base.",
             ResourceType = null,
-            BaseProductionRate = 0
+            BaseProductionRate = 0,
+            BaseConstructionCost = 100
         },
-        [BuildingType.OilRefinary] = new()
+        [BuildingType.OilRefinery] = new()
         {
-            Type = BuildingType.OilRefinary,
-            Name = "Oil Refinary",
+            Type = BuildingType.OilRefinery,
+            Name = "Oil Refinery",
             Description = "Industrial infrastructure dedicated to the extraction"
                           + " and refining of crude oil from the tactical region.",
             ResourceType = ResourceType.Oil,
-            BaseProductionRate = 100
+            BaseProductionRate = 100,
+            BaseConstructionCost = 200
         }
     };
 

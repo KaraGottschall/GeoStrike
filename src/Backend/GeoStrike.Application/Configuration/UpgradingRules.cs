@@ -2,6 +2,8 @@
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
 // Criado em: 09/07/2026 por Kara Gottschall
 
+using GeoStrike.Domain.Catalogs;
+
 namespace GeoStrike.Application.Configuration;
 
 public static class UpgradingRules
@@ -13,9 +15,9 @@ public static class UpgradingRules
         { "Workman", 800.00 },
     };
 
-    public static double CalculateConstructionFee(BuildingType buildingType, int currentLevel)
+    public static double CalculateConstructionCost(BuildingType buildingType, int currentLevel)
     {
-        const double baseCost = 1.0;
+        double baseCost = BuildingCatalog.Get(buildingType).BaseConstructionCost;
 
         double evolutionMultiplier = BuildingRules.EvolutionCostMultiplier(buildingType);
         double baseConstructionFee = BuildingRules.GetConstructionFee(buildingType);

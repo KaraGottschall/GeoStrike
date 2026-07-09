@@ -9,14 +9,14 @@ public class BuildingRules
     public static double EvolutionCostMultiplier(BuildingType buildingType) => buildingType switch
     {
         BuildingType.HeadQuarter => 1.02,
-        BuildingType.OilRefinary => 1.04,
+        BuildingType.OilRefinery => 1.04,
         var _ => throw new ArgumentOutOfRangeException(nameof(buildingType), buildingType, null)
     };
 
     public static double GetConstructionFee(BuildingType buildingType) => buildingType switch
     {
         BuildingType.HeadQuarter => 200,
-        BuildingType.OilRefinary => 240,
+        BuildingType.OilRefinery => 240,
         var _ => throw new ArgumentOutOfRangeException(nameof(buildingType), buildingType, null)
     };
 }

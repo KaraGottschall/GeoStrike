@@ -25,7 +25,7 @@ public class StartEvolvingPlayerBuildingUseCase(
         // if (request.CompletionDate.HasValue && request.CompletionDate > DateTime.UtcNow)
         //     throw new InvalidOperationException(ResourceMessagesExceptions.BUILDING_ALREADY_EVOLVING);
 
-        double costToUpgrade = UpgradingRules.CalculateConstructionFee(BuildingType.HeadQuarter, playerBuilding.Level);
+        double costToUpgrade = UpgradingRules.CalculateConstructionCost(BuildingType.HeadQuarter, playerBuilding.Level);
 
         if (!player.HasMoneyEnough(costToUpgrade)) return false;
 

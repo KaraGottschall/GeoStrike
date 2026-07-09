@@ -12,4 +12,5 @@ public class BuildingDefinition
 
     public ResourceType? ResourceType { get; init; }
     public int BaseProductionRate { get; init; }
+    public double BaseConstructionCost { get; init; }
 }
