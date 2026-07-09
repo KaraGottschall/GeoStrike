@@ -11,6 +11,7 @@ public static class DependecyInjectionExtension
         public void AddApplication()
         {
             serviceCollection.AddScoped<IStartEvolvingPlayerBuildingUseCase, StartEvolvingPlayerBuildingUseCase>();
+            serviceCollection.AddScoped<IGetPlayerByIdUseCase, GetPlayerByIdUseCase>();
         }
     }
 }

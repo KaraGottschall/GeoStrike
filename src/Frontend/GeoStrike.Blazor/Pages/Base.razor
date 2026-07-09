@@ -1,93 +1,165 @@
 ﻿@page "/base"
 @using GeoStrike.Communication.Requests
+@using GeoStrike.Domain.Catalogs
+@using GeoStrike.Domain.Entities
+@using GeoStrike.Domain.Models
 @inject HttpClient Http
 
-<div class="mt-8 px-4" style="font-family: 'Inter', sans-serif;">
-
+<div class="mt-8 px-4">
     <MudText Typo="Typo.body2" Class="text-uppercase font-weight-bold tracking-wider mb-6"
              Style="color: var(--mud-palette-text-secondary); letter-spacing: 1.5px;">
         Painel de Comando / Base
     </MudText>
 
-    <MudPaper Elevation="0" Class="pa-5 rounded-xl"
-              Style="width: 340px; background-color: var(--mud-palette-surface); border: 1px solid #22232b;">
+    <div class="d-flex flex-wrap gap-4">
+        @if (_jogador == null)
+        {
+            <MudProgressCircular Color="Color.Primary" Indeterminate="true"/>
+        }
+        else if (_jogador.Buildings == null || !_jogador.Buildings.Any())
+        {
+            <MudText Typo="Typo.body1">Você ainda não possui edifícios construídos nesta base.</MudText>
+        }
+        else
+        {
+            @foreach (PlayerBuilding edificio in _jogador.Buildings)
+            {
+                BuildingDefinition def = BuildingCatalog.Get(edificio.Building.Type);
+                string status = ObterStatus(edificio.Id);
 
-        <div class="d-flex align-center justify-space-between mb-2">
-            <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase"
-                     Style="color: var(--mud-palette-primary); letter-spacing: 1px;">
-                Produção de Recurso
-            </MudText>
+                <MudPaper Elevation="0" Class="pa-5 rounded-xl"
+                          Style="width: 340px; background-color: var(--mud-palette-surface); border: 1px solid #22232b; display: flex; flex-direction: column; justify-content: space-between;">
 
-            <span class="px-2 py-0.5 rounded-pill font-weight-bold"
-                  style="font-size: 11px; background-color: rgba(0, 230, 118, 0.1); color: var(--mud-palette-success);">
-                ● @statusMensagem
-            </span>
-        </div>
+                    <div>
+                        <div class="d-flex align-center justify-space-between mb-2">
+                            <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase"
+                                     Style="color: var(--mud-palette-primary); letter-spacing: 1px;">
+                                @(def.ResourceType.HasValue ? $"Produção de {def.ResourceType}" : "Centro de Comando")
+                            </MudText>
 
-        <MudText Typo="Typo.h5" Class="font-weight-bold mb-1" Style="color: var(--mud-palette-text-primary);">
-            Refinaria de Petróleo
-        </MudText>
+                            <span class="px-2 py-0.5 rounded-pill font-weight-bold"
+                                  style="font-size: 11px; background-color: @ObterBgCorStatus(status); color: @ObterCorTextoStatus(status);">
+                                ● @status
+                            </span>
+                        </div>
 
-        <MudText Typo="Typo.body2" Class="mb-4" Style="color: var(--mud-palette-text-secondary); font-size: 13px;">
-            Estrutura industrial voltada para a extração e refino de crude bruto da região tática.
-        </MudText>
+                        <MudText Typo="Typo.h5" Class="font-weight-bold mb-1"
+                                 Style="color: var(--mud-palette-text-primary);">
+                            @def.Name
+                        </MudText>
 
-        <hr style="border: 0; border-top: 1px solid #22232b; margin-bottom: 16px;"/>
+                        <MudText Typo="Typo.body2" Class="mb-4"
+                                 Style="color: var(--mud-palette-text-secondary); font-size: 13px; min-height: 58px;">
+                            @def.Description
+                        </MudText>
 
-        <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase d-block mb-2"
-                 Style="color: var(--mud-palette-text-secondary);">
-            Especificações de Upgrade
-        </MudText>
+                        <hr style="border: 0; border-top: 1px solid #22232b; margin-bottom: 16px;"/>
 
-        <div class="d-flex gap-2 mb-5">
-            <span class="px-3 py-1 rounded"
-                  style="font-size: 11px; background-color: #22232b; color: #fff; font-weight: 600;">NÍVEL 1</span>
-            <span class="px-3 py-1 rounded"
-                  style="font-size: 11px; background-color: rgba(112, 85, 255, 0.1); color: var(--mud-palette-primary); font-weight: 600;">+15% PROD</span>
-        </div>
+                        <MudText Typo="Typo.caption" Class="font-weight-bold text-uppercase d-block mb-2"
+                                 Style="color: var(--mud-palette-text-secondary);">
+                            Especificações de Upgrade
+                        </MudText>
 
-        <MudButton Variant="Variant.Filled"
-                   Color="Color.Primary"
-                   FullWidth="true"
-                   DropShadow="false"
-                   OnClick="EvoluirEdificio"
-                   Class="py-2 rounded-lg font-weight-bold text-capitalize"
-                   Style="font-size: 13px; letter-spacing: 0.5px; box-shadow: none;">
-            Evoluir Prédio
-        </MudButton>
+                        <div class="d-flex gap-2 mb-5">
+                            <span class="px-3 py-1 rounded"
+                                  style="font-size: 11px; background-color: #22232b; color: #fff; font-weight: 600;">
+                                NÍVEL @edificio.Level
+                            </span>
 
-    </MudPaper>
+                            @if (def.ResourceType.HasValue)
+                            {
+                                <span class="px-3 py-1 rounded"
+                                      style="font-size: 11px; background-color: rgba(112, 85, 255, 0.1); color: var(--mud-palette-primary); font-weight: 600;">
+                                    Base: @def.BaseProductionRate/h
+                                </span>
+                            }
+                        </div>
+                    </div>
+
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               FullWidth="true"
+                               DropShadow="false"
+                               OnClick="() => EvoluirEdificio(edificio.Id)"
+                               Class="py-2 rounded-lg font-weight-bold text-capitalize"
+                               Style="font-size: 13px; letter-spacing: 0.5px; box-shadow: none;">
+                        Evoluir Prédio
+                    </MudButton>
+
+                </MudPaper>
+            }
+        }
+    </div>
 </div>
 
 @code {
-    private string statusMensagem = "Pronto para evoluir";
 
-    private readonly Guid edificioIdIdFicticio = Guid.Parse("e3b0c442-98fc-1c14-9afb-f4c8996fb924");
+    private Player? _jogador;
 
-    private async Task EvoluirEdificio()
+    private readonly Dictionary<Guid, string> _statusMensagens = new();
+
+    protected override async Task OnInitializedAsync()
     {
-        statusMensagem = "Enviando comando...";
+        try
+        {
+            Guid idJogadorLogado = Guid.Parse("41D3A083-4137-439A-8688-B9C6F6A9AB8C");
+
+            _jogador = await Http.GetFromJsonAsync<Player>($"Player/{idJogadorLogado}");
+
+            if (_jogador?.Buildings != null)
+            {
+                foreach (PlayerBuilding ed in _jogador.Buildings)
+                {
+                    _statusMensagens[ed.Id] = "Pronto para evoluir";
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar dados do jogador: {ex.Message}");
+        }
+    }
+
+    private string ObterStatus(Guid id) =>
+        _statusMensagens.GetValueOrDefault(id, "Pronto para evoluir");
+
+    private async Task EvoluirEdificio(Guid buildingId)
+    {
+        _statusMensagens[buildingId] = "Enviando comando...";
 
         StartEvolvingPlayerBuildingRequest request = new()
         {
-            BuildingId = edificioIdIdFicticio
+            BuildingId = buildingId
         };
 
         HttpResponseMessage response = await Http.PostAsJsonAsync("Building", request);
 
-        statusMensagem = response.IsSuccessStatusCode
-            ? "Evolução iniciada com sucesso!"
-            : "Erro: Saldo insuficiente ou prédio já evoluindo.";
+        if (response.IsSuccessStatusCode)
+        {
+            _statusMensagens[buildingId] = "Evolução iniciada!";
+
+            PlayerBuilding? predio = _jogador?.Buildings.FirstOrDefault(e => e.Id == buildingId);
+            if (predio != null) predio.Level++;
+        }
+        else
+        {
+            _statusMensagens[buildingId] = "Erro: Recursos insuficientes.";
+        }
     }
 
-    private Color GetStatusColor()
+    private static string ObterCorTextoStatus(string status) => status switch
     {
-        if (statusMensagem.Contains("Pronto")) return Color.Info;
-        if (statusMensagem.Contains("Enviando")) return Color.Warning;
-        if (statusMensagem.Contains("sucesso")) return Color.Success;
-        if (statusMensagem.Contains("Erro")) return Color.Error;
+        var s when s.Contains("Enviando") => "var(--mud-palette-warning)",
+        var s when s.Contains("Erro") => "var(--mud-palette-error)",
+        var _ => "var(--mud-palette-success)"
+    };
 
-        return Color.Default;
-    }
+    private static string
+        ObterBgCorStatus(string status) => status switch
+    {
+        var s when s.Contains("Enviando") => "rgba(255, 152, 0, 0.1)",
+        var s when s.Contains("Erro") => "rgba(244, 67, 54, 0.1)",
+        var _ => "rgba(0, 230, 118, 0.1)"
+    };
 
 }

@@ -11,15 +11,6 @@ public class PlayerRepository(GeoStrikeDbContext dbContext) : IReadOnlyPlayerRep
         .ThenInclude(pb => pb.Building)
         .FirstOrDefaultAsync(p => p.Id == playerId);
 
-    public async Task<bool> HasMoneyEnough(Guid playerId, double targetAmount)
-    {
-        PlayerEntity? player = await dbContext.Players.FindAsync(playerId);
-
-        double? currency = player?.Money;
-
-        return currency >= targetAmount;
-    }
-
     public async Task<PlayerBuildingEntity?> GetPlayerBuildingById(Guid playerId, Guid buildingId)
     {
         PlayerBuildingEntity? playerBuilding = await dbContext.PlayerBuildings

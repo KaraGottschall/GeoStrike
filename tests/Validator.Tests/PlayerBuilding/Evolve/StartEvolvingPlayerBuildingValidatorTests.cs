@@ -2,16 +2,6 @@
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
 // Criado em: 08/07/2026 por Kara Gottschall
 
-#region
-
-using CommonTestUtilities.Requests;
-using FluentValidation.Results;
-using GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
-using GeoStrike.Communication.Requests;
-using Shouldly;
-
-#endregion
-
 namespace Validator.Tests.PlayerBuilding.Evolve;
 
 public class StartEvolvingPlayerBuildingValidatorTests

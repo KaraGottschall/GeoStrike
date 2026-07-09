@@ -10,7 +10,7 @@ public class PlayerBuilding
 
     // Relacionamento com o Jogador
     public Guid PlayerId { get; set; }
-    public Player Player { get; set; } = null!;
+    public PlayerEntity Player { get; set; } = null!;
 
     // Relacionamento com o modelo da Construção
     public Guid BuildingId { get; set; }

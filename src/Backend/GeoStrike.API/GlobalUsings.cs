@@ -20,5 +20,8 @@ global using GeoStrike.Infrastructure;
 global using GeoStrike.Infrastructure.DataAccess;
 global using Microsoft.AspNetCore.Localization;
 global using Microsoft.EntityFrameworkCore;
+global using GeoStrike.Application.UseCases.Player;
+global using GeoStrike.Domain.Entities;
+global using System.Text.Json.Serialization;
 
 #endregion

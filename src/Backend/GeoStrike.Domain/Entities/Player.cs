@@ -13,7 +13,7 @@ public class Player
     public int Gold { get; set; }
     public int Oil { get; set; }
 
-    public ICollection<PlayerBuilding> Buildings { get; set; } = new List<PlayerBuilding>();
+    public ICollection<PlayerBuildingEntity> Buildings { get; set; } = new List<PlayerBuildingEntity>();
 
     public bool HasMoneyEnough(double costToUpgrade) => Money >= costToUpgrade;
 }

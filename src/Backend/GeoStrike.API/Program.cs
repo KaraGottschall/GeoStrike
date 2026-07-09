@@ -15,7 +15,12 @@ builder.Services.AddDbContext<GeoStrikeDbContext>(options =>
         )
     ));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // TODO: Remover e adotar as boas práticas de DTO. Isso é temporário.
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();

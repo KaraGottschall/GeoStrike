@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider Theme="_geoStrikeTheme" DefaultScrollbar="true" IsDarkMode="true"/>
+<MudThemeProvider DefaultScrollbar="true" IsDarkMode="true"/>
 <MudPopoverProvider/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
@@ -22,7 +22,16 @@
 </div>
 
 <style>
+    *, body, html, .mud-typography {
+        font-family: 'Inter', 'Helvetica', 'Arial', sans-serif !important;
+    }
+
     body, html {
         background-color: #0b0c10 !important;
+    }
+
+    :root, body {
+        --mud-palette-background: #0b0c10 !important;
+        --mud-palette-surface: #13141c !important;
     }
 </style>
