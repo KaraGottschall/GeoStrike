@@ -7,10 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj"/>
+      <None Remove="StaticData\jobRoles.json" />
+      <None Remove="StaticData\materials.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\GeoStrike.Domain\GeoStrike.Domain.csproj" />
         <EmbeddedResource Include="StaticData\buildings.json">
             <LogicalName>GeoStrike.Domain.Catalog.StaticData.buildings.json</LogicalName>
         </EmbeddedResource>
+        <EmbeddedResource Include="StaticData\jobRoles.json" />
+        <EmbeddedResource Include="StaticData\materials.json" />
     </ItemGroup>
 
 </Project>

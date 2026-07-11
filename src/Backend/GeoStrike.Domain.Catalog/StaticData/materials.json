@@ -1,0 +1,39 @@
+{
+  "materials": [
+    {
+      "type": "Steel",
+      "name": "Steel",
+      "description": "High-strength structural alloy used for industrial framing, heavy infrastructure, and reinforcement.",
+      "unit": "Unit",
+      "price": 25.0
+    },
+    {
+      "type": "Cement",
+      "name": "Cement",
+      "description": "Basic hydraulic binding agent, essential for mixing mortar and casting structural bases.",
+      "unit": "Unit",
+      "price": 8.0
+    },
+    {
+      "type": "Concrete",
+      "name": "Concrete",
+      "description": "Heavy aggregate composite used for high-durability foundations and blast-resistant walls.",
+      "unit": "Unit",
+      "price": 15.0
+    },
+    {
+      "type": "Water",
+      "name": "Water",
+      "description": "Vital chemical component for concrete hydration processes and industrial cooling systems.",
+      "unit": "Unit",
+      "price": 1.5
+    },
+    {
+      "type": "Sand",
+      "name": "Sand",
+      "description": "Fine granular aggregate used as a foundational filler material in structural mixtures.",
+      "unit": "Unit",
+      "price": 4.0
+    }
+  ]
+}
