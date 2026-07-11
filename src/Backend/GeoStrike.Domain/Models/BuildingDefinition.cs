@@ -13,4 +13,7 @@ public class BuildingDefinition
     public ResourceType? ResourceType { get; init; }
     public int BaseProductionRate { get; init; }
     public double BaseConstructionCost { get; init; }
+    public IReadOnlyList<CrewRequirement> ConstructionCrew { get; init; } = [];
 }
+
+public sealed record CrewRequirement(JobRoleType JobRoleType, int Quantity);

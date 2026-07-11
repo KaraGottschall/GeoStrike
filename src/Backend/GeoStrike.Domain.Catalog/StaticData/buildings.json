@@ -6,7 +6,21 @@
       "description": "The command center of your tactical base.",
       "resourceType": null,
       "baseProductionRate": 0,
-      "baseConstructionCost": 0
+      "baseConstructionCost": 0,
+      "constructionCrew": [
+        {
+          "role": "Engineer",
+          "quantity": 1
+        },
+        {
+          "role": "MasterBuilder",
+          "quantity": 1
+        },
+        {
+          "role": "Workman",
+          "quantity": 5
+        }
+      ]
     },
     {
       "type": "OilRefinery",
@@ -14,7 +28,21 @@
       "description": "Industrial infrastructure dedicated to the extraction and refining of crude oil from the tactical region.",
       "resourceType": "Oil",
       "baseProductionRate": 100,
-      "baseConstructionCost": 100
+      "baseConstructionCost": 100,
+      "constructionCrew": [
+        {
+          "role": "Engineer",
+          "quantity": 2
+        },
+        {
+          "role": "MasterBuilder",
+          "quantity": 1
+        },
+        {
+          "role": "Workman",
+          "quantity": 10
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "jobRoles": [
+    {
+      "type": "Engineer",
+      "title": "Engenheiro de Obras",
+      "baseWage": 2500.00
+    },
+    {
+      "type": "MasterBuilder",
+      "title": "Mestre de Obras",
+      "baseWage": 1500.00
+    },
+    {
+      "type": "Workman",
+      "title": "Oper�rio",
+      "baseWage": 800.00
+    }
+  ]
+}

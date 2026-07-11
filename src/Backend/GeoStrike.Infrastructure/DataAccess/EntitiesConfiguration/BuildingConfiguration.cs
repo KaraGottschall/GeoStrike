@@ -17,13 +17,13 @@ public class BuildingConfiguration : IEntityTypeConfiguration<Building>
         {
             Id = HeadquartersTemplateId,
             Type = BuildingType.HeadQuarter,
-            ConstructionCost = BuildingCatalog.Get(BuildingType.HeadQuarter).BaseConstructionCost,
+            ConstructionCost = BuildingCatalog.Get(BuildingType.HeadQuarter).BaseConstructionCost
         },
         new()
         {
             Id = OilrefinaryTemplateId,
             Type = BuildingType.OilRefinery,
-            ConstructionCost = BuildingCatalog.Get(BuildingType.OilRefinery).BaseConstructionCost,
+            ConstructionCost = BuildingCatalog.Get(BuildingType.OilRefinery).BaseConstructionCost
         }
     };
 
