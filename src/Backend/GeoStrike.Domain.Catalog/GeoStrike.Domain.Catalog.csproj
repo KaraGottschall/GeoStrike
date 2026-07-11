@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <None Remove="StaticData\jobRoles.json" />
+      <None Remove="StaticData\materials.json" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,6 +17,7 @@
             <LogicalName>GeoStrike.Domain.Catalog.StaticData.buildings.json</LogicalName>
         </EmbeddedResource>
         <EmbeddedResource Include="StaticData\jobRoles.json" />
+        <EmbeddedResource Include="StaticData\materials.json" />
     </ItemGroup>
 
 </Project>

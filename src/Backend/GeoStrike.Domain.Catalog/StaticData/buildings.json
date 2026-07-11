@@ -20,6 +20,28 @@
           "role": "Workman",
           "quantity": 5
         }
+      ],
+      "materialsRequirement": [
+        {
+          "material": "Steel",
+          "quantity": 25
+        },
+        {
+          "material": "Cement",
+          "quantity": 120
+        },
+        {
+          "material": "Concrete",
+          "quantity": 60
+        },
+        {
+          "material": "Water",
+          "quantity": 40
+        },
+        {
+          "material": "Sand",
+          "quantity": 80
+        }
       ]
     },
     {
@@ -41,6 +63,28 @@
         {
           "role": "Workman",
           "quantity": 10
+        }
+      ],
+      "materialsRequirement": [
+        {
+          "material": "Steel",
+          "quantity": 180
+        },
+        {
+          "material": "Cement",
+          "quantity": 350
+        },
+        {
+          "material": "Concrete",
+          "quantity": 220
+        },
+        {
+          "material": "Water",
+          "quantity": 110
+        },
+        {
+          "material": "Sand",
+          "quantity": 190
         }
       ]
     }

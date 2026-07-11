@@ -41,7 +41,8 @@ public static class BuildingCatalog
     [
         typeof(JsonStringEnumConverter<BuildingType>),
         typeof(JsonStringEnumConverter<ResourceType>),
-        typeof(JsonStringEnumConverter<JobRoleType>)
+        typeof(JsonStringEnumConverter<JobRoleType>),
+        typeof(JsonStringEnumConverter<MaterialType>)
     ]
 )]
 internal partial class CatalogJsonContext : JsonSerializerContext;

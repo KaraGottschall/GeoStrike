@@ -16,11 +16,11 @@ public static class UpgradingRules
         double evolutionMultiplier = BuildingRules.EvolutionCostMultiplier(buildingType);
         double baseConstructionFee = BuildingRules.GetConstructionFee(buildingType);
 
-        double structuralCost = (baseCost * Math.Pow(evolutionMultiplier, currentLevel)) + baseConstructionFee;
+        double structuralCost = baseCost * Math.Pow(evolutionMultiplier, currentLevel) + baseConstructionFee;
 
         return structuralCost
                + CalculatePayroll(BuildingCatalog.Get(buildingType))
-               + CalculateMaterialCosts(buildingType, currentLevel);
+               + CalculateMaterialCosts(BuildingCatalog.Get(buildingType));
     }
 
     private static double CalculatePayroll(BuildingDefinition buildingDefinition)
@@ -31,12 +31,24 @@ public static class UpgradingRules
         return payroll;
     }
 
-
-    private static double CalculateMaterialCosts(BuildingType buildingType, int currentLevel) =>
+    private static double CalculateMaterialCosts(BuildingDefinition buildingDefinition)
+    {
         /*
-         * Custos com materiais de construcao (cada tipo de material envolvido terá um valor por unidade)
+         * Tipos de materiais comuns na construção civíl, já que são itens pra construção de edifícios
          *
-         * Pode ser levado em conta os materiais que o jogador já tem em estoque
+         * As medidas serao todas 'unidade', mas considero tambem abaixo a sua evolucao:
+         * Aco: (no futuro talvez contabilizar por tonelada?)
+         * Cimento: (no futuro talvez contabilizar por tonelada?)
+         * Concreto: (no futuro medir por metro cubico)
+         * Agua: (no futuro medir por metro cubico)
+         * Areia: (tambem medir por metro cubico)
+         *
+         * No futuro, poderá ser levado em conta os materiais que o jogador já tem em estoque
          */
-        1.0;
+        double materialCost = buildingDefinition.MaterialsRequirement.Sum(requirement =>
+            requirement.Quantity * MaterialCatalog.Get(requirement.MaterialType).Price
+        );
+
+        return materialCost;
+    }
 }
