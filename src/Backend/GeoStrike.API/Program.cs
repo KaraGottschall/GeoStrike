@@ -5,6 +5,7 @@
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<GeoStrikeDbContext>(options =>
     options.UseSqlServer(
         connectionString,
@@ -14,6 +15,17 @@ builder.Services.AddDbContext<GeoStrikeDbContext>(options =>
             errorNumbersToAdd: null
         )
     ));
+
+string? cosmosConnectionString = builder.Configuration.GetConnectionString("CosmosConnection");
+
+// Registra o cliente do Cosmos como Singleton (Recomendação oficial da Microsoft para performance)
+builder.Services.AddSingleton(sp => new CosmosClient(cosmosConnectionString, new()
+{
+    SerializerOptions = new()
+    {
+        PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
+    }
+}));
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

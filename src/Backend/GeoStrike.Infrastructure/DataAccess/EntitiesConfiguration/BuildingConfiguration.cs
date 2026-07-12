@@ -2,8 +2,6 @@
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
 // Criado em: 07/07/2026 por Kara Gottschall
 
-using GeoStrike.Domain.Catalog;
-
 namespace GeoStrike.Infrastructure.DataAccess.EntitiesConfiguration;
 
 public class BuildingConfiguration : IEntityTypeConfiguration<Building>
@@ -17,13 +15,13 @@ public class BuildingConfiguration : IEntityTypeConfiguration<Building>
         {
             Id = HeadquartersTemplateId,
             Type = BuildingType.HeadQuarter,
-            ConstructionCost = BuildingCatalog.Get(BuildingType.HeadQuarter).BaseConstructionCost
+            ConstructionCost = 0.0
         },
         new()
         {
             Id = OilrefinaryTemplateId,
             Type = BuildingType.OilRefinery,
-            ConstructionCost = BuildingCatalog.Get(BuildingType.OilRefinery).BaseConstructionCost
+            ConstructionCost = 100.0
         }
     };
 

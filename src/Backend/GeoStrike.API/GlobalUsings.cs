@@ -23,5 +23,6 @@ global using Microsoft.EntityFrameworkCore;
 global using GeoStrike.Application.UseCases.Player;
 global using GeoStrike.Domain.Entities;
 global using System.Text.Json.Serialization;
+global using Microsoft.Azure.Cosmos;
 
 #endregion

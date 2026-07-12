@@ -20,5 +20,8 @@ global using Microsoft.Extensions.DependencyInjection;
 global using static GeoStrike.Exception.Resources.ResourceMessagesExceptions;
 global using PlayerBuildingEntity = GeoStrike.Domain.Entities.PlayerBuilding;
 global using PlayerEntity = GeoStrike.Domain.Entities.Player;
+global using GeoStrike.Domain.Catalog;
+global using GeoStrike.Domain.Models;
+global using GeoStrike.Domain.Repositories.Catalog.BuildingCatalogRepository;
 
 #endregion

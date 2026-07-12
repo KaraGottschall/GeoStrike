@@ -2,11 +2,10 @@
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
 // Criado em: 08/07/2026 por Kara Gottschall
 
-namespace GeoStrike.Application.UseCases.PlayerBuilding.Evolve;
-
 public class StartEvolvingPlayerBuildingUseCase(
     IReadOnlyPlayerRepository readOnlyPlayerRepository,
-    IWriteOnlyPlayerBuildingRepository writeOnlyPlayerBuildingRepository
+    IWriteOnlyPlayerBuildingRepository writeOnlyPlayerBuildingRepository,
+    IReadOnlyBuildingCatalogRepository readOnlyBuildingCatalogRepository
 )
     : IStartEvolvingPlayerBuildingUseCase
 {
@@ -25,7 +24,13 @@ public class StartEvolvingPlayerBuildingUseCase(
         // if (request.CompletionDate.HasValue && request.CompletionDate > DateTime.UtcNow)
         //     throw new InvalidOperationException(ResourceMessagesExceptions.BUILDING_ALREADY_EVOLVING);
 
-        double costToUpgrade = UpgradingRules.CalculateConstructionCost(BuildingType.HeadQuarter, playerBuilding.Level);
+        BuildingDefinition? buildingDefinition =
+            await readOnlyBuildingCatalogRepository.GetByTypeAsync(playerBuilding.Building.Type);
+
+        if (buildingDefinition == null)
+            throw new KeyNotFoundException("Configuração do edifício não encontrada no catálogo do Cosmos.");
+
+        double costToUpgrade = UpgradingRules.CalculateConstructionCost(buildingDefinition, playerBuilding.Level);
 
         if (!player.HasMoneyEnough(costToUpgrade)) return false;
 

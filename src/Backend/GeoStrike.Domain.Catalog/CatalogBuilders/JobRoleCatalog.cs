@@ -1,6 +1,6 @@
 ﻿// Solução: GeoStrike | Projeto: GeoStrike.Domain.Catalog
 // Licenciado sob a Licença MIT. Veja o arquivo LICENSE na raiz para mais detalhes.
-// Criado em: 10/07/2026 por Kara Gottschall
+// Criado em: 11/07/2026 por Kara Gottschall
 
 namespace GeoStrike.Domain.Catalog;
 

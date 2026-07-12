@@ -9,4 +9,3 @@ namespace CommonTestUtilities.Requests;
 public class GetPlayerByIdRequestBuilder
 {
     public static GetPlayerByIdRequest Build() => new() { PlayerId = Guid.NewGuid() };
-}
